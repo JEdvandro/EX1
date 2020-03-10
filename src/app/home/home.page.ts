@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ArtigoService } from './../artigo/artigo.service';
 import { Artigo } from './../model/artigo';
 import { Component } from '@angular/core';
@@ -10,8 +11,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   artigos: Artigo[] = [];
-  constructor(private serviceArtigo: ArtigoService) {
+  constructor(private serviceArtigo: ArtigoService,
+              public router: Router) {
     this.artigos = this.serviceArtigo.getAll();
   }
+
+  abrirArtigo(artigo: Artigo) { 
+    this.router.navigate(['/artigo-detalhe', artigo.id]);
+    
   }
+
+}
 

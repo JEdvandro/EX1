@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-   <ion-list>
-    <button ion-item *ngFor="let artigo of artigos">
+  <ion-list>
+    <button ion-item *ngFor="let artigo of artigos"(click)="abrirArtigo(artigo)">
       <ion-card>
 
         <ion-card-header>
@@ -20,9 +20,9 @@
         <ion-card-content>
           <div [innerHTML]="artigo.texto"></div>
           <br><br>
-          <ion-card-subtitle>{{ artigo.autor }}</ion-card-subtitle>  
+          <ion-card-subtitle>{{ artigo.autor }}</ion-card-subtitle>
         </ion-card-content>
-        
+
       </ion-card>
     </button>
   </ion-list>

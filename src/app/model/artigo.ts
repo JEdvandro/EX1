@@ -1,4 +1,4 @@
-export class Artigo{
+export class Artigo {
   id: number;
   titulo: string;
   autor: string;
